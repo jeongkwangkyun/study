@@ -1,5 +1,6 @@
 package com.api.board.domain;
 
+// VO 역할 하는거 같음
 public class Board {
 	 
     int board_seq;

@@ -16,6 +16,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import com.zaxxer.hikari.HikariDataSource;
 
+// db 연결해주는거 같은데
 @ComponentScan(basePackages = "com.api.board.service")
 @MapperScan(basePackages = "com.api.board.mapper", sqlSessionFactoryRef = "sqlSessionFactory")
 @Configuration

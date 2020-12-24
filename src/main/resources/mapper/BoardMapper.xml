@@ -28,4 +28,28 @@
          
     </select>
     
+    <insert id="boardInsert" parameterType="com.api.board.domain.Board">
+        INSERT INTO
+        board (BOARD_WRITER)
+        VALUES(#{board_writer}) 
+    </insert>
+    
+	<update id="boardUpdate" parameterType="com.api.board.domain.Board">
+        UPDATE board
+            SET
+        <if test="subject != null">
+            SUBJECT = #{subject}
+        </if>
+        <if test="subject != null and content != null"> , </if>
+        <if test="content != null">
+            CONTENT = #{content}
+        </if>
+        WHERE BNO = #{bno}
+    </update>
+
+
+	<delete id="boardDelete" parameterType="int">
+        DELETE FROM BOARD WHERE BOARD_SEQ = #{board_seq}
+    </delete>
+
 </mapper>
